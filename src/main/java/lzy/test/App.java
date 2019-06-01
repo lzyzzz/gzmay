@@ -14,7 +14,7 @@ public class App {
             if (args[0].trim().toLowerCase().equals("--help") || args[0].trim().toLowerCase().equals("-h"))
                 System.out.print("Please enter your digits with comma like the following example: 0,4,18");
             else
-                new LetterPrinter(args[0].trim()).print();
+                new LetterPrinter(args[0].trim(),true).print();
         }
     }
 }
@@ -22,11 +22,16 @@ public class App {
 class LetterPrinter {
     protected String[] digitLetters=new String[]{"","","abc","def","ghi","jkl","mno","pqrts","tuv","wxyz"};
     final String args;
+    boolean supportTo99=false;
+
+    public LetterPrinter(String args,boolean supportTo99 ) {
+        this.args = args;
+        this.supportTo99 =supportTo99;
+    }
 
     public LetterPrinter(String args) {
         this.args = args;
     }
-
     public void print() {
         String[] representLetters;
         try {
@@ -88,10 +93,14 @@ class LetterPrinter {
         return Arrays.stream(args.split(","))
                 .map(x-> {
                             Integer i =Integer.parseInt(x);
+                            if(i>=digitLetters.length && i<100 && supportTo99)
+                                 return FIX_STRING_FOR_OVER_10;
                             return digitLetters[i];
                         }
                 )
                 .toArray(size->new String[size]);
     }
+
+    final static String FIX_STRING_FOR_OVER_10="dsa";
 
 }

@@ -47,7 +47,7 @@ public class AppTest
 
     @Test
     public void mainTestThatHasOutput(){
-        App.main(new String[]{"5"});
+        App.main(new String[]{"5,45"});
         assertTrue(StringUtils.split(outContent.toString()," " ).length>0);
     }
 
@@ -78,6 +78,7 @@ public class AppTest
         lp.print();
         assertTrue(StringUtils.split(outContent.toString()," " ).length==(2*1*2));
     }
+
 
     class LetterPrinterTest extends LetterPrinter{
 
