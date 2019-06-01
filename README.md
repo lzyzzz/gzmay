@@ -12,3 +12,4 @@ Please use the following command to get help.
 Please enter your digits with comma like the following command.
 
     java -jar .\gz-may-1.0-SNAPSHOT.jar 2,46
+
