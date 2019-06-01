@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.test</groupId>
+    <groupId>lzy.test</groupId>
     <artifactId>gz-may</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>gz-may</name>
@@ -14,7 +14,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
-        <revision>2.0</revision>
     </properties>
 
     <dependencies>
@@ -31,6 +30,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
 
     <build>
         <plugins>

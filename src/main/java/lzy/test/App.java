@@ -38,7 +38,7 @@ class LetterPrinter {
             representLetters = getRepresentLetters();
         }
         catch (ArrayIndexOutOfBoundsException e){
-            System.err.printf("Please enter digit from 0 to %d.",digitLetters.length);
+            System.err.printf("Please enter digit from 0 to %d.", supportTo99 ? 99 : digitLetters.length);
             return;
         }
         if (representLetters == null) {
